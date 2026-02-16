@@ -5,15 +5,17 @@
     <title>Angeline Lapi - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Mobile Menu Button -->
     <button class="menu-btn" id="menuToggle">
         <i class='bx bx-menu'></i>
     </button>
 
+    <!-- Mobile Navigation Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="close-menu" id="closeMenu">
             <i class='bx bx-x'></i>
@@ -27,75 +29,174 @@
         </div>
     </div>
 
+    <!-- Decorative elements -->
+    <div class="gradient-bg"></div>
+    <div class="dots-bg"></div>
+
     <div class="content-wrapper">
         <main class="scroll-container">
+            <!-- Home Section -->
             <section id="home" class="section">
-                <div class="section-content">
-                    <h2>Personal Information</h2>
-                    <p><strong>Name:</strong> Angeline Lapi</p>
-                    <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
-                    <p><strong>Year:</strong> 3rd year</p>
-                </div>
-            </section>
-
-            <section id="objective" class="section">
-                <div class="section-content">
-                    <h2>Career Objective</h2>
-                    <p>
-                        Seeking a position where I can acquire new skills, and use what I've learned.
-                    </p>
-                </div>
-            </section>
-
-            <section id="skills" class="section">
-                <div class="section-content">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>Communication</li>
-                        <li>Problem Solving</li>
-                        <li>Team Collaboration</li>
-                        <li>Time Management</li>
-                        <li>Adaptability</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="projects" class="section">
-                <div class="section-content">
-                    <h2>Projects</h2>
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class='bx bx-user-circle'></i>
+                <div class="section-content glass-effect">
+                    <div class="profile-badge">
+                        <span class="badge">Welcome to my portfolio</span>
+                    </div>
+                    <h1 class="glowing-text">Angeline Lapi</h1>
+                    <p class="subtitle">BS Information Technology | 3rd Year</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class='bx bx-user'></i>
+                            <span>Angeline Lapi</span>
                         </div>
-                        <h3>Personal Portfolio</h3>
-                        <p class="project-description">
-                            A responsive personal portfolio website built with HTML, CSS, and JavaScript. 
-                            Features include smooth scrolling, mobile-friendly design, and interactive elements.
-                        </p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
+                        <div class="info-item">
+                            <i class='bx bx-book-open'></i>
+                            <span>BS Information Technology</span>
+                        </div>
+                        <div class="info-item">
+                            <i class='bx bx-calendar'></i>
+                            <span>3rd Year</span>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Objective Section -->
+            <section id="objective" class="section">
+                <div class="section-content glass-effect">
+                    <h2>Career <span class="highlight">Objective</span></h2>
+                    <div class="objective-card">
+                        <i class='bx bx-target-lock'></i>
+                        <p>
+                            Seeking a position where I can acquire new skills, and use what I've learned to contribute to innovative projects while growing both personally and professionally.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <div class="section-content glass-effect">
+                    <h2>Technical & Professional <span class="highlight">Skills</span></h2>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>Core Skills</h3>
+                            <div class="skill-items">
+                                <span class="skill-tag">Communication</span>
+                                <span class="skill-tag">Problem Solving</span>
+                                <span class="skill-tag">Team Collaboration</span>
+                                <span class="skill-tag">Time Management</span>
+                                <span class="skill-tag">Adaptability</span>
+                                <span class="skill-tag">Critical Thinking</span>
+                                <span class="skill-tag">Creativity</span>
+                                <span class="skill-tag">Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="section-content glass-effect">
+                    <h2>Featured <span class="highlight">Projects</span></h2>
+                    <div class="projects-grid">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <i class='bx bx-code-alt'></i>
+                                <h3>Personal Portfolio</h3>
+                            </div>
+                            <p class="project-description">
+                                A responsive personal portfolio website built with HTML, CSS, and JavaScript. Features include smooth scrolling, mobile-friendly design, and interactive elements.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-header">
+                                <i class='bx bx-mobile-alt'></i>
+                                <h3>Mobile App Design</h3>
+                            </div>
+                            <p class="project-description">
+                                UI/UX design concept for a task management application with dark mode support and intuitive user interface.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span>Figma</span>
+                                <span>UI/UX</span>
+                                <span>Prototype</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-header">
+                                <i class='bx bx-data'></i>
+                                <h3>Database Project</h3>
+                            </div>
+                            <p class="project-description">
+                                Design and implementation of a student management system database using SQL with complex queries and relationships.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span>MySQL</span>
+                                <span>PHP</span>
+                                <span>phpMyAdmin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
             <section id="contact" class="section">
-                <div class="section-content">
-                    <h2>Contact Information</h2>
-                    <p><strong>Email:</strong> lapiangeline@gmail.com</p>
-                    <p><strong>Phone:</strong> 09093713858</p>
-                    <p><strong>Location:</strong> Tabagak Madridejos, Cebu</p>
+                <div class="section-content glass-effect">
+                    <h2>Get In <span class="highlight">Touch</span></h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class='bx bx-envelope'></i>
+                            <div class="contact-info">
+                                <h3>Email</h3>
+                                <a href="mailto:lapiangeline@gmail.com">lapiangeline@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class='bx bx-phone'></i>
+                            <div class="contact-info">
+                                <h3>Phone</h3>
+                                <a href="tel:09093713858">0909 371 3858</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class='bx bx-map'></i>
+                            <div class="contact-info">
+                                <h3>Location</h3>
+                                <p>Tabagak Madridejos, Cebu</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
     </div>
 
     <footer>
-        <a href="https://www.facebook.com/" target="_blank" class="fb-icon">
-            <i class="bx bxl-facebook"></i>
-        </a>
+        <p>&copy; 2026 Angeline Lapi. All rights reserved.</p>
     </footer>
 
     <script>
@@ -107,6 +208,7 @@
             const closeMenu = document.getElementById('closeMenu');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
             
+            // Toggle mobile menu
             menuToggle.addEventListener('click', function() {
                 mobileMenu.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -117,6 +219,7 @@
                 document.body.style.overflow = '';
             });
             
+            // Close menu when clicking a link
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -133,6 +236,7 @@
                 });
             });
             
+            // Close menu when clicking outside
             mobileMenu.addEventListener('click', function(e) {
                 if (e.target === mobileMenu) {
                     mobileMenu.classList.remove('active');
@@ -140,6 +244,7 @@
                 }
             });
             
+            // Update URL hash when scrolling stops
             let scrollTimeout;
             
             scrollContainer.addEventListener('scroll', function() {
@@ -175,6 +280,7 @@
                 }, 100);
             });
             
+            // Handle initial hash
             const initialHash = window.location.hash.substring(1);
             if (initialHash) {
                 const targetSection = document.getElementById(initialHash);
