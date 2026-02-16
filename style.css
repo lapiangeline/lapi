@@ -98,21 +98,26 @@ body {
     gap: 15px;
     text-align: center;
     padding: 20px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .mobile-nav-link {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
     transition: all 0.2s ease;
-    padding: 8px 25px;
+    padding: 12px 25px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid #333;
 }
 
 .mobile-nav-link:hover {
-    background: rgba(0, 0, 0, 0.1);
-    border-color: #000000;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #666;
 }
 
 .content-wrapper {
@@ -155,12 +160,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px;
+    padding: 20px 15px;
     background-color: #111;
 }
 
 .section-content {
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
     margin: 0 auto;
     text-align: justify;
@@ -169,7 +174,6 @@ body {
     border-radius: 12px;
     border: 1px solid #222;
 }
-
 
 h2 {
     margin-bottom: 20px;
@@ -198,7 +202,7 @@ h2 {
 
 .project-card {
     background: #1a1a1a;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 25px 20px;
     margin: 15px 0 5px;
     border: 1px solid #333;
@@ -314,11 +318,9 @@ strong {
     font-weight: 500;
 }
 
-
 #contact p {
     text-align: justify;
 }
-
 
 strong {
     color: #fff;
@@ -326,7 +328,19 @@ strong {
     display: inline-block; 
 }
 
-@media (min-width: 769px) {
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .section-content {
+        padding: 40px 35px;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1023px) {
     .menu-btn {
         display: none !important;
     }
@@ -339,8 +353,22 @@ strong {
     .mobile-subtitle {
         display: none !important;
     }
+    
+    .section-content {
+        padding: 35px 30px;
+        max-width: 700px;
+    }
+    
+    h2 {
+        font-size: 1.9rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
     .menu-btn {
         display: flex;
@@ -348,15 +376,113 @@ strong {
     
     .mobile-name {
         display: block;
+        font-size: 1.8rem;
     }
     
     .mobile-subtitle {
         display: block;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .section {
+        padding: 15px 12px;
     }
     
     .section-content {
-        padding: 25px 20px;
-        margin: 0 10px;
+        padding: 25px 18px;
+        margin: 0 8px;
+        max-width: 100%;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+        margin-bottom: 18px;
+    }
+    
+    .project-card {
+        padding: 22px 18px;
+        margin: 12px 0 5px;
+    }
+    
+    .project-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+    
+    .project-icon {
+        font-size: 50px;
+        margin-bottom: 18px;
+    }
+    
+    .project-tech {
+        gap: 10px;
+        margin-top: 18px;
+    }
+    
+    .project-tech span {
+        padding: 6px 14px;
+        font-size: 0.9rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
+    }
+    
+    ul {
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    li {
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+    
+    footer {
+        height: 65px;
+        padding: 12px 15px;
+    }
+    
+    .fb-icon {
+        font-size: 32px;
+    }
+    
+    .mobile-menu-content {
+        padding: 15px;
+        max-width: 280px;
+    }
+    
+    .mobile-nav-link {
+        font-size: 1.2rem;
+        padding: 14px 20px;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .mobile-name {
+        font-size: 1.6rem;
+    }
+    
+    .mobile-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .section {
+        padding: 12px 10px;
+    }
+    
+    .section-content {
+        padding: 20px 15px;
     }
     
     h2 {
@@ -366,6 +492,80 @@ strong {
     
     .project-card {
         padding: 20px 15px;
+    }
+    
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .project-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .project-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+    
+    .project-tech span {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    li {
+        padding: 6px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .mobile-nav-link {
+        font-size: 1.1rem;
+        padding: 12px 18px;
+    }
+    
+    .menu-btn, .close-menu {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .menu-btn i, .close-menu i {
+        font-size: 24px;
+    }
+    
+    footer {
+        height: 60px;
+    }
+    
+    .fb-icon {
+        font-size: 28px;
+    }
+}
+
+/* Very small mobile styles */
+@media (max-width: 360px) {
+    .mobile-name {
+        font-size: 1.4rem;
+    }
+    
+    .mobile-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .section-content {
+        padding: 18px 12px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .project-card {
+        padding: 18px 12px;
     }
     
     .project-card h3 {
@@ -380,63 +580,17 @@ strong {
         font-size: 40px;
     }
     
-    .project-tech span {
-        padding: 4px 10px;
-        font-size: 0.75rem;
-    }
-    
     p {
-        font-size: 0.95rem;
-        margin-bottom: 10px;
+        font-size: 0.9rem;
     }
     
     li {
-        padding: 6px 14px;
+        padding: 5px 12px;
         font-size: 0.85rem;
     }
     
-    footer {
-        height: 60px;
-        padding: 10px;
-    }
-    
-    .fb-icon {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .mobile-name {
-        font-size: 1.4rem;
-    }
-    
-    .mobile-subtitle {
-        font-size: 0.8rem;
-    }
-    
-    h2 {
-        font-size: 1.3rem;
-    }
-    
-    .project-card h3 {
-        font-size: 1.1rem;
-    }
-    
-    .project-icon {
-        font-size: 35px;
-    }
-    
     .mobile-nav-link {
-        font-size: 1.1rem;
-        padding: 6px 20px;
-    }
-    
-    .menu-btn, .close-menu {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .menu-btn i, .close-menu i {
-        font-size: 24px;
+        font-size: 1rem;
+        padding: 10px 15px;
     }
 }
