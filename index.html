@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angeline Lapi - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="menu-btn" id="menuToggle">
+        <i class='bx bx-menu'></i>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class='bx bx-x'></i>
+        </button>
+        <div class="mobile-menu-content">
+            <a href="#home" class="mobile-nav-link" data-target="home">Home</a>
+            <a href="#objective" class="mobile-nav-link" data-target="objective">Objective</a>
+            <a href="#skills" class="mobile-nav-link" data-target="skills">Skills</a>
+            <a href="#projects" class="mobile-nav-link" data-target="projects">Projects</a>
+            <a href="#contact" class="mobile-nav-link" data-target="contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <main class="scroll-container">
+            <section id="home" class="section">
+                <div class="section-content">
+                    <h2>Personal Information</h2>
+                    <p><strong>Name:</strong> Angeline Lapi</p>
+                    <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+                    <p><strong>Year:</strong> 3rd year</p>
+                </div>
+            </section>
+
+            <section id="objective" class="section">
+                <div class="section-content">
+                    <h2>Career Objective</h2>
+                    <p>
+                        Seeking a position where I can acquire new skills, and use what I've learned.
+                    </p>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <div class="section-content">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Time Management</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <div class="section-content">
+                    <h2>Projects</h2>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class='bx bx-user-circle'></i>
+                        </div>
+                        <h3>Personal Portfolio</h3>
+                        <p class="project-description">
+                            A responsive personal portfolio website built with HTML, CSS, and JavaScript. 
+                            Features include smooth scrolling, mobile-friendly design, and interactive elements.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="section-content">
+                    <h2>Contact Information</h2>
+                    <p><strong>Email:</strong> lapiangeline@gmail.com</p>
+                    <p><strong>Phone:</strong> 09093713858</p>
+                    <p><strong>Location:</strong> Tabagak Madridejos, Cebu</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <a href="https://www.facebook.com/" target="_blank" class="fb-icon">
+            <i class="bx bxl-facebook"></i>
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            const scrollContainer = document.querySelector('.scroll-container');
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState(null, null, '#' + targetId);
+                    }
+                    
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            let scrollTimeout;
+            
+            scrollContainer.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                
+                scrollTimeout = setTimeout(function() {
+                    const containerTop = scrollContainer.scrollTop;
+                    const containerHeight = scrollContainer.clientHeight;
+                    
+                    let activeSection = null;
+                    let maxVisibleHeight = 0;
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        
+                        const visibleTop = Math.max(containerTop, sectionTop);
+                        const visibleBottom = Math.min(containerTop + containerHeight, sectionTop + sectionHeight);
+                        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+                        
+                        if (visibleHeight > maxVisibleHeight) {
+                            maxVisibleHeight = visibleHeight;
+                            activeSection = section;
+                        }
+                    });
+                    
+                    if (activeSection) {
+                        const sectionId = activeSection.getAttribute('id');
+                        if (window.location.hash !== '#' + sectionId) {
+                            history.replaceState(null, null, '#' + sectionId);
+                        }
+                    }
+                }, 100);
+            });
+            
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash) {
+                const targetSection = document.getElementById(initialHash);
+                if (targetSection) {
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
